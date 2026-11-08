@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadastroProduto));
             pnl_painelTitulo = new Panel();
             pictureBox1 = new PictureBox();
             lbl_Titulo = new Label();
@@ -90,7 +89,6 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(18, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(54, 50);
@@ -292,7 +290,7 @@
             // 
             lbl_Estoque.AutoSize = true;
             lbl_Estoque.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_Estoque.Location = new Point(16, 169);
+            lbl_Estoque.Location = new Point(11, 169);
             lbl_Estoque.Name = "lbl_Estoque";
             lbl_Estoque.Size = new Size(116, 22);
             lbl_Estoque.TabIndex = 4;
@@ -311,7 +309,7 @@
             // 
             lbl_Margem.AutoSize = true;
             lbl_Margem.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_Margem.Location = new Point(16, 106);
+            lbl_Margem.Location = new Point(11, 106);
             lbl_Margem.Name = "lbl_Margem";
             lbl_Margem.Size = new Size(126, 22);
             lbl_Margem.TabIndex = 2;
@@ -332,7 +330,7 @@
             // 
             lbl_PrecoProduto.AutoSize = true;
             lbl_PrecoProduto.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_PrecoProduto.Location = new Point(16, 45);
+            lbl_PrecoProduto.Location = new Point(11, 45);
             lbl_PrecoProduto.Name = "lbl_PrecoProduto";
             lbl_PrecoProduto.Size = new Size(190, 22);
             lbl_PrecoProduto.TabIndex = 0;
@@ -364,7 +362,7 @@
             // 
             lbl_DataCadastro.AutoSize = true;
             lbl_DataCadastro.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_DataCadastro.Location = new Point(27, 103);
+            lbl_DataCadastro.Location = new Point(22, 103);
             lbl_DataCadastro.Name = "lbl_DataCadastro";
             lbl_DataCadastro.Size = new Size(163, 22);
             lbl_DataCadastro.TabIndex = 1;
@@ -440,6 +438,7 @@
             Controls.Add(grp_DadosPrincipais);
             Controls.Add(pnl_painelTitulo);
             Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Frm_CadastroProduto";
             Text = "Cadastro de Produtos";
             pnl_painelTitulo.ResumeLayout(false);
