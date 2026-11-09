@@ -31,8 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadastroProduto));
             pnl_painelTitulo = new Panel();
-            pictureBox1 = new PictureBox();
             lbl_Titulo = new Label();
+            pictureBox1 = new PictureBox();
             grp_DadosPrincipais = new GroupBox();
             textBox1 = new TextBox();
             lbl_Descricao = new Label();
@@ -61,13 +61,13 @@
             chk_ProdutoAtivo = new CheckBox();
             panel1 = new Panel();
             btn_Excluir = new Button();
+            img_Excluir = new ImageList(components);
             btn_Limpar = new Button();
+            img_Limpar = new ImageList(components);
             btn_Salvar = new Button();
+            img_Salvar = new ImageList(components);
             btn_Novo = new Button();
             img_Novo = new ImageList(components);
-            img_Salvar = new ImageList(components);
-            img_Limpar = new ImageList(components);
-            img_Excluir = new ImageList(components);
             pnl_painelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             grp_DadosPrincipais.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             // pnl_painelTitulo
             // 
-            pnl_painelTitulo.BackColor = Color.Navy;
+            pnl_painelTitulo.BackColor = Color.FromArgb(39, 64, 139);
             pnl_painelTitulo.Controls.Add(lbl_Titulo);
             pnl_painelTitulo.Controls.Add(pictureBox1);
             pnl_painelTitulo.Dock = DockStyle.Top;
@@ -91,6 +91,16 @@
             pnl_painelTitulo.Name = "pnl_painelTitulo";
             pnl_painelTitulo.Size = new Size(983, 72);
             pnl_painelTitulo.TabIndex = 0;
+            // 
+            // lbl_Titulo
+            // 
+            lbl_Titulo.AutoSize = true;
+            lbl_Titulo.Font = new Font("Arial", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_Titulo.Location = new Point(78, 18);
+            lbl_Titulo.Name = "lbl_Titulo";
+            lbl_Titulo.Size = new Size(320, 36);
+            lbl_Titulo.TabIndex = 1;
+            lbl_Titulo.Text = "Cadastro de Produtos";
             // 
             // pictureBox1
             // 
@@ -102,16 +112,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
-            // 
-            // lbl_Titulo
-            // 
-            lbl_Titulo.AutoSize = true;
-            lbl_Titulo.Font = new Font("Arial", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_Titulo.Location = new Point(78, 18);
-            lbl_Titulo.Name = "lbl_Titulo";
-            lbl_Titulo.Size = new Size(320, 36);
-            lbl_Titulo.TabIndex = 1;
-            lbl_Titulo.Text = "Cadastro de Produtos";
             // 
             // grp_DadosPrincipais
             // 
@@ -155,6 +155,7 @@
             // cmb_Categorias
             // 
             cmb_Categorias.FormattingEnabled = true;
+            cmb_Categorias.Items.AddRange(new object[] { "Embalagens", "Confeitaria", "Ingredientes para Panificação", "Laticínios", "Biscoitos e Bolachas", "Salgados", "Bebidas", "Doces e Sobremesas", "Bolos e Tortas", "Pães" });
             cmb_Categorias.Location = new Point(707, 72);
             cmb_Categorias.Name = "cmb_Categorias";
             cmb_Categorias.Size = new Size(230, 32);
@@ -191,6 +192,7 @@
             // 
             cmb_Fornecedores.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmb_Fornecedores.FormattingEnabled = true;
+            cmb_Fornecedores.Items.AddRange(new object[] { "Nestlé", "Bauducco", "Coca-Cola", "Unilever", "Vigor" });
             cmb_Fornecedores.Location = new Point(16, 156);
             cmb_Fornecedores.Name = "cmb_Fornecedores";
             cmb_Fornecedores.Size = new Size(230, 30);
@@ -305,6 +307,7 @@
             // 
             // txt_Margem
             // 
+            txt_Margem.Enabled = false;
             txt_Margem.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txt_Margem.Location = new Point(175, 103);
             txt_Margem.Name = "txt_Margem";
@@ -412,6 +415,13 @@
             btn_Excluir.TextAlign = ContentAlignment.MiddleRight;
             btn_Excluir.UseVisualStyleBackColor = true;
             // 
+            // img_Excluir
+            // 
+            img_Excluir.ColorDepth = ColorDepth.Depth32Bit;
+            img_Excluir.ImageStream = (ImageListStreamer)resources.GetObject("img_Excluir.ImageStream");
+            img_Excluir.TransparentColor = Color.Transparent;
+            img_Excluir.Images.SetKeyName(0, "simbolo-excluir.png");
+            // 
             // btn_Limpar
             // 
             btn_Limpar.Font = new Font("Arial", 12F, FontStyle.Bold);
@@ -426,6 +436,13 @@
             btn_Limpar.TextAlign = ContentAlignment.MiddleRight;
             btn_Limpar.UseVisualStyleBackColor = true;
             // 
+            // img_Limpar
+            // 
+            img_Limpar.ColorDepth = ColorDepth.Depth32Bit;
+            img_Limpar.ImageStream = (ImageListStreamer)resources.GetObject("img_Limpar.ImageStream");
+            img_Limpar.TransparentColor = Color.Transparent;
+            img_Limpar.Images.SetKeyName(0, "simbolo-limpar.png");
+            // 
             // btn_Salvar
             // 
             btn_Salvar.Font = new Font("Arial", 12F, FontStyle.Bold);
@@ -439,6 +456,13 @@
             btn_Salvar.Text = "Salvar";
             btn_Salvar.TextAlign = ContentAlignment.MiddleRight;
             btn_Salvar.UseVisualStyleBackColor = true;
+            // 
+            // img_Salvar
+            // 
+            img_Salvar.ColorDepth = ColorDepth.Depth32Bit;
+            img_Salvar.ImageStream = (ImageListStreamer)resources.GetObject("img_Salvar.ImageStream");
+            img_Salvar.TransparentColor = Color.Transparent;
+            img_Salvar.Images.SetKeyName(0, "simbolo-salvar.png");
             // 
             // btn_Novo
             // 
@@ -462,27 +486,6 @@
             img_Novo.TransparentColor = Color.Transparent;
             img_Novo.Images.SetKeyName(0, "simbolo-novo-arquivo.png");
             // 
-            // img_Salvar
-            // 
-            img_Salvar.ColorDepth = ColorDepth.Depth32Bit;
-            img_Salvar.ImageStream = (ImageListStreamer)resources.GetObject("img_Salvar.ImageStream");
-            img_Salvar.TransparentColor = Color.Transparent;
-            img_Salvar.Images.SetKeyName(0, "simbolo-salvar.png");
-            // 
-            // img_Limpar
-            // 
-            img_Limpar.ColorDepth = ColorDepth.Depth32Bit;
-            img_Limpar.ImageStream = (ImageListStreamer)resources.GetObject("img_Limpar.ImageStream");
-            img_Limpar.TransparentColor = Color.Transparent;
-            img_Limpar.Images.SetKeyName(0, "simbolo-limpar.png");
-            // 
-            // img_Excluir
-            // 
-            img_Excluir.ColorDepth = ColorDepth.Depth32Bit;
-            img_Excluir.ImageStream = (ImageListStreamer)resources.GetObject("img_Excluir.ImageStream");
-            img_Excluir.TransparentColor = Color.Transparent;
-            img_Excluir.Images.SetKeyName(0, "simbolo-excluir.png");
-            // 
             // Frm_CadastroProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -496,6 +499,7 @@
             Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Frm_CadastroProduto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Produtos";
             pnl_painelTitulo.ResumeLayout(false);
             pnl_painelTitulo.PerformLayout();
