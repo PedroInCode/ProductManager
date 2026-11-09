@@ -34,7 +34,7 @@
             lbl_Titulo = new Label();
             pictureBox1 = new PictureBox();
             grp_DadosPrincipais = new GroupBox();
-            textBox1 = new TextBox();
+            txt_Descricao = new TextBox();
             lbl_Descricao = new Label();
             cmb_Categorias = new ComboBox();
             txt_NomeProduto = new TextBox();
@@ -115,7 +115,7 @@
             // 
             // grp_DadosPrincipais
             // 
-            grp_DadosPrincipais.Controls.Add(textBox1);
+            grp_DadosPrincipais.Controls.Add(txt_Descricao);
             grp_DadosPrincipais.Controls.Add(lbl_Descricao);
             grp_DadosPrincipais.Controls.Add(cmb_Categorias);
             grp_DadosPrincipais.Controls.Add(txt_NomeProduto);
@@ -129,18 +129,19 @@
             grp_DadosPrincipais.Location = new Point(12, 87);
             grp_DadosPrincipais.Name = "grp_DadosPrincipais";
             grp_DadosPrincipais.Size = new Size(957, 277);
-            grp_DadosPrincipais.TabIndex = 1;
+            grp_DadosPrincipais.TabIndex = 0;
             grp_DadosPrincipais.TabStop = false;
             grp_DadosPrincipais.Text = "Dados Principais";
             // 
-            // textBox1
+            // txt_Descricao
             // 
-            textBox1.Location = new Point(274, 157);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Size = new Size(663, 99);
-            textBox1.TabIndex = 9;
+            txt_Descricao.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txt_Descricao.Location = new Point(274, 157);
+            txt_Descricao.Multiline = true;
+            txt_Descricao.Name = "txt_Descricao";
+            txt_Descricao.ScrollBars = ScrollBars.Vertical;
+            txt_Descricao.Size = new Size(663, 99);
+            txt_Descricao.TabIndex = 8;
             // 
             // lbl_Descricao
             // 
@@ -149,24 +150,27 @@
             lbl_Descricao.Location = new Point(274, 127);
             lbl_Descricao.Name = "lbl_Descricao";
             lbl_Descricao.Size = new Size(101, 22);
-            lbl_Descricao.TabIndex = 9;
+            lbl_Descricao.TabIndex = 7;
             lbl_Descricao.Text = "Descrição:";
             // 
             // cmb_Categorias
             // 
+            cmb_Categorias.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmb_Categorias.FormattingEnabled = true;
             cmb_Categorias.Items.AddRange(new object[] { "Embalagens", "Confeitaria", "Ingredientes para Panificação", "Laticínios", "Biscoitos e Bolachas", "Salgados", "Bebidas", "Doces e Sobremesas", "Bolos e Tortas", "Pães" });
             cmb_Categorias.Location = new Point(707, 72);
             cmb_Categorias.Name = "cmb_Categorias";
-            cmb_Categorias.Size = new Size(230, 32);
-            cmb_Categorias.TabIndex = 6;
+            cmb_Categorias.Size = new Size(230, 30);
+            cmb_Categorias.TabIndex = 4;
+            cmb_Categorias.Text = "Selecione...";
             // 
             // txt_NomeProduto
             // 
+            txt_NomeProduto.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txt_NomeProduto.Location = new Point(206, 73);
             txt_NomeProduto.Name = "txt_NomeProduto";
-            txt_NomeProduto.Size = new Size(478, 32);
-            txt_NomeProduto.TabIndex = 4;
+            txt_NomeProduto.Size = new Size(478, 29);
+            txt_NomeProduto.TabIndex = 2;
             // 
             // lbl_Categoria
             // 
@@ -175,7 +179,7 @@
             lbl_Categoria.Location = new Point(707, 38);
             lbl_Categoria.Name = "lbl_Categoria";
             lbl_Categoria.Size = new Size(109, 22);
-            lbl_Categoria.TabIndex = 5;
+            lbl_Categoria.TabIndex = 3;
             lbl_Categoria.Text = "Categoria: *";
             // 
             // lbl_NomeProduto
@@ -185,18 +189,18 @@
             lbl_NomeProduto.Location = new Point(206, 38);
             lbl_NomeProduto.Name = "lbl_NomeProduto";
             lbl_NomeProduto.Size = new Size(177, 22);
-            lbl_NomeProduto.TabIndex = 3;
+            lbl_NomeProduto.TabIndex = 1;
             lbl_NomeProduto.Text = "Nome do Produto: *";
             // 
             // cmb_Fornecedores
             // 
             cmb_Fornecedores.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmb_Fornecedores.FormattingEnabled = true;
-            cmb_Fornecedores.Items.AddRange(new object[] { "Nestlé", "Bauducco", "Coca-Cola", "Unilever", "Vigor" });
+            cmb_Fornecedores.Items.AddRange(new object[] { "Bunge Professional", "M. Dias Branco", "Lesaffre", "Puratos", "Rich's", "Scala", "Piracanjuba", "Tirol", "Catupiry", "Galvanotek", "MultiCaixas Neto", "Central dos Pães", "Faleiro Food Service", "Assaí Atacadista", "Atacadão", "Roldão" });
             cmb_Fornecedores.Location = new Point(16, 156);
             cmb_Fornecedores.Name = "cmb_Fornecedores";
             cmb_Fornecedores.Size = new Size(230, 30);
-            cmb_Fornecedores.TabIndex = 8;
+            cmb_Fornecedores.TabIndex = 6;
             cmb_Fornecedores.Text = "Selecione...";
             // 
             // lbl_Fonercedor
@@ -206,7 +210,7 @@
             lbl_Fonercedor.Location = new Point(12, 127);
             lbl_Fonercedor.Name = "lbl_Fonercedor";
             lbl_Fonercedor.Size = new Size(126, 22);
-            lbl_Fonercedor.TabIndex = 7;
+            lbl_Fonercedor.TabIndex = 5;
             lbl_Fonercedor.Text = "Fornecedor: *";
             // 
             // lbl_Codigo
@@ -216,17 +220,19 @@
             lbl_Codigo.Location = new Point(12, 38);
             lbl_Codigo.Name = "lbl_Codigo";
             lbl_Codigo.Size = new Size(77, 22);
-            lbl_Codigo.TabIndex = 1;
+            lbl_Codigo.TabIndex = 0;
             lbl_Codigo.Text = "Código:";
             // 
             // mtb_Codigo
             // 
+            mtb_Codigo.Enabled = false;
             mtb_Codigo.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mtb_Codigo.Location = new Point(16, 73);
             mtb_Codigo.Mask = "000000";
             mtb_Codigo.Name = "mtb_Codigo";
             mtb_Codigo.Size = new Size(168, 29);
-            mtb_Codigo.TabIndex = 2;
+            mtb_Codigo.TabIndex = 10;
+            mtb_Codigo.Text = "000000";
             // 
             // grp_PrecificacaoEstoque
             // 
@@ -381,6 +387,8 @@
             // chk_ProdutoAtivo
             // 
             chk_ProdutoAtivo.AutoSize = true;
+            chk_ProdutoAtivo.Checked = true;
+            chk_ProdutoAtivo.CheckState = CheckState.Checked;
             chk_ProdutoAtivo.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             chk_ProdutoAtivo.Location = new Point(27, 45);
             chk_ProdutoAtivo.Name = "chk_ProdutoAtivo";
@@ -414,6 +422,7 @@
             btn_Excluir.Text = "Excluir";
             btn_Excluir.TextAlign = ContentAlignment.MiddleRight;
             btn_Excluir.UseVisualStyleBackColor = true;
+            btn_Excluir.Click += btn_Excluir_Click;
             // 
             // img_Excluir
             // 
@@ -435,6 +444,7 @@
             btn_Limpar.Text = "Limpar";
             btn_Limpar.TextAlign = ContentAlignment.MiddleRight;
             btn_Limpar.UseVisualStyleBackColor = true;
+            btn_Limpar.Click += btn_Limpar_Click;
             // 
             // img_Limpar
             // 
@@ -456,6 +466,7 @@
             btn_Salvar.Text = "Salvar";
             btn_Salvar.TextAlign = ContentAlignment.MiddleRight;
             btn_Salvar.UseVisualStyleBackColor = true;
+            btn_Salvar.Click += btn_Salvar_Click;
             // 
             // img_Salvar
             // 
@@ -478,6 +489,7 @@
             btn_Novo.Text = "Novo";
             btn_Novo.TextAlign = ContentAlignment.MiddleRight;
             btn_Novo.UseVisualStyleBackColor = true;
+            btn_Novo.Click += btn_Novo_Click;
             // 
             // img_Novo
             // 
@@ -534,7 +546,7 @@
         private Label lbl_Categoria;
         private Label lbl_NomeProduto;
         private ComboBox cmb_Categorias;
-        private TextBox textBox1;
+        private TextBox txt_Descricao;
         private Label lbl_Descricao;
         private Label lbl_PrecoProduto;
         private Label lbl_Margem;
