@@ -2,7 +2,7 @@ namespace ProductManager
 {
     public partial class Frm_CadastroProduto : Form
     {
-        private int proximoCodigo = 6; // Variável para armazenar o próximo código disponível
+        private int proximoCodigo = 1; // Variável para armazenar o próximo código disponível
 
         public Frm_CadastroProduto()
         {
@@ -85,6 +85,7 @@ namespace ProductManager
         {
             // Limpa todos os campos do formulário e redefine os valores para o estado inicial
             mtb_Codigo.Clear();
+            mtb_Codigo.Text = "000000"; 
             txt_NomeProduto.Clear();
             cmb_Categorias.SelectedIndex = -1;
             cmb_Categorias.Text = "Selecione...";
