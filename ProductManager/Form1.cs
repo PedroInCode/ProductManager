@@ -142,6 +142,8 @@ namespace ProductManager
                 MessageBox.Show("Produto excluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimparCampos();
             }
+
+            txt_NomeProduto.Focus(); // Define o foco para o campo "Nome do Produto" após a exclusão
         }
     }
 }
