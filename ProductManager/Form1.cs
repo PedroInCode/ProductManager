@@ -9,29 +9,27 @@ namespace ProductManager
             InitializeComponent();
 
             // Vincula o evento ValueChanged para calcular a margem automaticamente nos NumericUpDown
-            nud_PrecoCusto.ValueChanged += (s, e) => CalcularMargem();
+            nud_PrecoCusto.ValueChanged += (s, e) => CalcularMargem(); 
             nud_PrecoVenda.ValueChanged += (s, e) => CalcularMargem();
         }
-
         private void Frm_CadastroProduto_Load(object sender, EventArgs e)
         {
-            txt_NomeProduto.Focus();
-            chk_ProdutoAtivo.Checked = true;
+            txt_NomeProduto.Focus(); // Define o foco inicial para o campo "Nome do Produto"
+            chk_ProdutoAtivo.Checked = true; // Define o checkbox como marcado por padrão
         }
-
         private void CalcularMargem()
         {
-            decimal custo = nud_PrecoCusto.Value;
-            decimal venda = nud_PrecoVenda.Value;
+            decimal custo = nud_PrecoCusto.Value; // Obtém o valor do Preço de Custo
+            decimal venda = nud_PrecoVenda.Value; // Obtém o valor do Preço de Venda
 
-            decimal margem = venda - custo;
-            txt_Margem.Text = margem.ToString("N2");
+            decimal margem = venda - custo; // Calcula a margem de lucro
+            txt_Margem.Text = margem.ToString("N2"); // Atualiza o campo de margem com o valor calculado, formatado com duas casas decimais
 
         }
-
         private bool ValidarCampos()
         {
-            if (string.IsNullOrWhiteSpace(txt_NomeProduto.Text))
+            // Valida os campos obrigatórios e exibe mensagens de aviso se algum campo estiver inválido
+            if (string.IsNullOrWhiteSpace(txt_NomeProduto.Text)) 
             {
                 MessageBox.Show("O campo 'Nome do Produto' é obrigatório.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_NomeProduto.Focus();
@@ -83,9 +81,9 @@ namespace ProductManager
             }
             return true;
         }
-
         private void LimparCampos()
         {
+            // Limpa todos os campos do formulário e redefine os valores para o estado inicial
             mtb_Codigo.Clear();
             txt_NomeProduto.Clear();
             cmb_Categorias.SelectedIndex = -1;
@@ -101,44 +99,42 @@ namespace ProductManager
             chk_ProdutoAtivo.Checked = true;
             dtp_DataCadastro.Value = DateTime.Today;
         }
-
         private void btn_Novo_Click(object sender, EventArgs e)
         {
-            LimparCampos();
+            LimparCampos(); // Limpa os campos do formulário
 
-            mtb_Codigo.Text = proximoCodigo.ToString("D4");
+            mtb_Codigo.Text = proximoCodigo.ToString("D6"); // Define o próximo código disponível no campo de código, formatado com 6 dígitos
 
-            txt_NomeProduto.Focus();
+            txt_NomeProduto.Focus(); // Define o foco para o campo "Nome do Produto" após limpar os campos
         }
-
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampos())
+            if (!ValidarCampos()) // Valida os campos antes de salvar
             {
                 return;
             }
 
             MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            proximoCodigo++;
-            LimparCampos();
-            txt_NomeProduto.Focus();
+            proximoCodigo++; // Incrementa o próximo código disponível para o próximo produto
+            LimparCampos(); // Limpa os campos do formulário após salvar
+            txt_NomeProduto.Focus(); // Define o foco para o campo "Nome do Produto" após salvar
         }
-
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
-            LimparCampos();
-            txt_NomeProduto.Focus();
+            LimparCampos(); // Limpa os campos do formulário
+            txt_NomeProduto.Focus(); // Define o foco para o campo "Nome do Produto" após limpar os campos
         }
-
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
+            // Verifica se há um produto selecionado para exclusão
             if (string.IsNullOrWhiteSpace(mtb_Codigo.Text))
             {
                 MessageBox.Show("Nenhum produto selecionado para exclusão.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // Exibe uma mensagem de confirmação antes de excluir o produto
             var confirmacao = MessageBox.Show("Deseja realmente excluir este produto?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(confirmacao == DialogResult.Yes)
             {
