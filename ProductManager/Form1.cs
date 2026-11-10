@@ -9,7 +9,7 @@ namespace ProductManager
             InitializeComponent();
 
             // Vincula o evento ValueChanged para calcular a margem automaticamente nos NumericUpDown
-            nud_PrecoCusto.ValueChanged += (s, e) => CalcularMargem(); 
+            nud_PrecoCusto.ValueChanged += (s, e) => CalcularMargem();
             nud_PrecoVenda.ValueChanged += (s, e) => CalcularMargem();
         }
         private void Frm_CadastroProduto_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace ProductManager
         private bool ValidarCampos()
         {
             // Valida os campos obrigatórios e exibe mensagens de aviso se algum campo estiver inválido
-            if (string.IsNullOrWhiteSpace(txt_NomeProduto.Text)) 
+            if (string.IsNullOrWhiteSpace(txt_NomeProduto.Text))
             {
                 MessageBox.Show("O campo 'Nome do Produto' é obrigatório.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_NomeProduto.Focus();
@@ -85,14 +85,14 @@ namespace ProductManager
         {
             // Limpa todos os campos do formulário e redefine os valores para o estado inicial
             mtb_Codigo.Clear();
-            mtb_Codigo.Text = "000000"; 
+            mtb_Codigo.Text = "000000";
             txt_NomeProduto.Clear();
             cmb_Categorias.SelectedIndex = -1;
             cmb_Categorias.Text = "Selecione...";
             cmb_Fornecedores.SelectedIndex = -1;
             cmb_Fornecedores.Text = "Selecione...";
             txt_Descricao.Clear();
-            nud_PrecoCusto.Value = 0; 
+            nud_PrecoCusto.Value = 0;
             nud_PrecoVenda.Value = 0;
             txt_Margem.Text = "0,00";
             nud_StockInicial.Value = 0;
@@ -137,7 +137,7 @@ namespace ProductManager
 
             // Exibe uma mensagem de confirmação antes de excluir o produto
             var confirmacao = MessageBox.Show("Deseja realmente excluir este produto?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(confirmacao == DialogResult.Yes)
+            if (confirmacao == DialogResult.Yes)
             {
                 MessageBox.Show("Produto excluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimparCampos();
@@ -145,5 +145,7 @@ namespace ProductManager
 
             txt_NomeProduto.Focus(); // Define o foco para o campo "Nome do Produto" após a exclusão
         }
+
+       
     }
 }

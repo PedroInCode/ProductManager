@@ -341,6 +341,7 @@
             nud_PrecoCusto.Size = new Size(103, 29);
             nud_PrecoCusto.TabIndex = 1;
             nud_PrecoCusto.ThousandsSeparator = true;
+            
             // 
             // lbl_PrecoProduto
             // 
